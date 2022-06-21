@@ -1,21 +1,34 @@
 # cypress-example
 
-Example repo for E2E test automation with Cypress and Typescript  
+## Task description
+### UI Testing
+Ex. Please automate 2 included scenarios using any Javascript framework you feel the most
+comfortable with.
+Test scenarios:
+1. Open 10C home page ('https://10clouds.com/')
+2. Open Careers tab
+3. Validate that there is exactly 1 'Senior QA Automation Engineer' role open
 
-Application under test: **Cypress Kitchen Sink** - [example.cypress.io](https://example.cypress.io)  
-This is an example app used to showcase [Cypress.io](https://www.cypress.io/) testing.  
-For a full reference of Cypress documentation, go to [docs.cypress.io](https://docs.cypress.io/)
+1. Open 10C home page ('https://10clouds.com/')
+2. Open Careers tab
+3. Select “QA” from “All departments” dropdown.
+4. Validate that each result contains "QA Automation" or “QA Engineer” in the title
 
-Test spec `todo.spec.ts` is the enhanced Cypress `todo.spec.js` example, adopted to Page Object pattern.
+### API Testing
+Please use swapi API (https://swapi.dev/) to validate following scenarios:
+1. GET /people/4/ is returning Darth Vader.
+2. GET /people/400/ is returning 404.
+Link to documentation https://swapi.dev/documentation.
+Please use any Javascript library for implementation.
 
-### How to run tests locally
+## How to run tests locally
 - run `npm install`
 - rename `.env.example` to `.env`
 - run `npm run test` or `npx cypress open`
 
-### Reporting
+## Reporting
 Reporter: [mochawesome](https://www.npmjs.com/package/mochawesome)  
 Report file: `/reports/mochawesome.html`
 
-### GitHub Actions
-[E2E tests workflow](https://github.com/vit-ganich/cypress-example/actions/workflows/ci.yml)
+## GitHub Actions
+[E2E tests workflow](https://github.com/vit-ganich/10cloud-test-task/actions/workflows/ci.yml)
