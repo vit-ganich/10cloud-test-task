@@ -1,19 +1,19 @@
 export default class WebElement {
-  protected _selector: string | keyof HTMLElementTagNameMap;
-  protected contains: boolean = false;
+  protected selector: string | keyof HTMLElementTagNameMap;
 
-  get selector() {
-    return this._selector;
+  /**
+   *
+   * @param selector string selector
+   */
+  constructor(selector: string | keyof HTMLElementTagNameMap) {
+    this.selector = selector;
   }
 
-  constructor(
-    selector: string | keyof HTMLElementTagNameMap,
-    { contains = false } = {},
-  ) {
-    this._selector = selector;
-    this.contains = contains;
-  }
-
+  /**
+   * Find an element using cy.get()
+   * @param options
+   * @returns
+   */
   get(
     options?: Partial<
       Cypress.Loggable &
@@ -22,9 +22,17 @@ export default class WebElement {
         Cypress.Shadow
     >,
   ) {
-    if (this.contains) {
-      return cy.contains(this._selector, options);
-    }
-    return cy.get(this._selector, options);
+    return cy.get(this.selector, options);
+  }
+
+  /**
+   * Click on the element
+   * @param options
+   * @returns
+   */
+  click(
+    options?: Partial<Cypress.ClickOptions>,
+  ): Cypress.Chainable<JQuery> | Cypress.Chainable<undefined> {
+    return this.get().click(options);
   }
 }

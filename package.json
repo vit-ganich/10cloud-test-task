@@ -1,7 +1,7 @@
 {
-  "name": "cypress-example",
+  "name": "10cloud-test-task",
   "version": "1.0.0",
-  "description": "Example repo for E2E test automation with Cypress",
+  "description": "10cloud assignment",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint --ext *.js,*.jsx,*.ts,*.tsx",

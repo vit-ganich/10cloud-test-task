@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://example.cypress.io",
+  "baseUrl": "https://10clouds.com",
   "video": true,
   "videosFolder": "reports/videos",
   "screenshotsFolder": "reports/screenshots",
@@ -10,5 +10,6 @@
     "overwrite": false,
     "html": true,
     "json": true
-  }
+  },
+  "watchForFileChanges": false
 }

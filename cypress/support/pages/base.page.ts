@@ -1,17 +1,28 @@
+import WebElement from '../web.elements/webElement';
+
 /**
  * Base class for page objects
  */
 abstract class BasePage {
-  url: string | undefined;
+  loadingIndicator = new WebElement('div[class*="LoadingIndicator"]');
+
+  constructor(readonly url: string) {}
 
   /**
-   * Visit page url. Note: 'url' field must be initialized
+   * Visit page url.
+   * Note: 'url' field must be initialized in the constructor
    */
   visit() {
-    if (!this.url) {
-      throw new Error('visit: url id not defined');
-    }
     cy.visit(this.url);
+    cy.url().should('contain', this.url);
+  }
+
+  /**
+   * Wait for the page load completed
+   */
+  waitForLoad() {
+    this.loadingIndicator.get().should('not.exist');
+    cy.wait(1000); // TODO: add a smart wait
   }
 }
 

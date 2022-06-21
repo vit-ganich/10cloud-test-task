@@ -16,6 +16,11 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
+Cypress.on('uncaught:exception', () => {
+  // Returning false prevents Cypress from failing the test in case of uncaught exception inside the application
+  return false;
+});
+
 Cypress.on(
   'test:after:run',
   (test: Cypress.ObjectLike, runnable: Mocha.Test) => {
