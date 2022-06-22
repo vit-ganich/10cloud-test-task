@@ -17,19 +17,9 @@ Test scenarios:
 6. Select “QA” from “All departments” dropdown.
 7. Validate that each result contains "QA Automation" or “QA Engineer” in the title
 
-### API Testing
-
-Please use swapi API (https://swapi.dev/) to validate following scenarios:
-
-1. GET /people/4/ is returning Darth Vader.
-2. GET /people/400/ is returning 404.
-   Link to documentation https://swapi.dev/documentation.
-   Please use any Javascript library for implementation.
-
 ## How to run tests locally
 
 - run `npm install`
-- rename `.env.example` to `.env`
 - run `npm run test` or `npx cypress open`
 
 ## Reporting
